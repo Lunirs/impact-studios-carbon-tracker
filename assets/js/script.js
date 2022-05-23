@@ -1,11 +1,10 @@
 
-// modal function 
+// initalization 
 document.addEventListener('DOMContentLoaded', function() {
     var elems = document.querySelectorAll('.modal');
-    var instances = M.Modal.init(elems, options);
+    var instances = M.Modal.init(elems);
+    
+    instances.open();
+    instances.close();
   });
 
-  var instance = M.Modal.getInstance(elem);
-
-  instance.open();
-  instance.close();
