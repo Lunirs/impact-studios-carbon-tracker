@@ -1,0 +1,15 @@
+
+.nav-extended {
+    background-color: rgb(94, 5, 112);
+}
+.jumbo {
+    background: lightblue;
+    width: fit-content;
+    height: 300px;
+}
+
+.surveyBtn{
+    background:rgb(223, 167, 247);
+    color: black;
+}
+
