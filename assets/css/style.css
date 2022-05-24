@@ -13,3 +13,26 @@
     color: black;
 }
 
+.hiw{
+    display: flex; 
+    justify-content: space-between;
+}
+
+.card {
+    width: 25%;
+    margin-left: 20px;
+    display: inline-block;
+}
+
+.card :hover{
+    width: 25%;
+    margin-left: 20px;
+    box-shadow: 10px 5px 5px rgb(94, 5, 112);
+    height: 200px;
+    border: solid black 5px;
+}
+
+.card-image{
+    width: 100%;
+    height: 160px;
+}
