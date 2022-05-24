@@ -25,7 +25,7 @@ fetch("https://api.thenewsapi.com/v1/news/all?" + query, requestOptions)
     var instances = M.Modal.init(elems);
   });
 
-  // ADDING Content for Carbon Interface API
+// ADDING Content for Carbon Interface API
 
 
 var appKey = 'HySkTwvhMPAKSFnlBztMg'
@@ -51,8 +51,9 @@ const response = fetch('https://www.carboninterface.com/api/v1/estimates', {
     })
     .then(function (data) {
       console.log(data.data.attributes.carbon_mt);
+      console.log(data.data.attributes);
     });
 
     function getElectricityValue() {
-        
+        // ask the user a series of questions to get data for estimates
     }
