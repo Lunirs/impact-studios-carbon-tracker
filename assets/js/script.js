@@ -31,7 +31,7 @@ document.addEventListener("DOMContentLoaded", function () {
 var appKey = "HySkTwvhMPAKSFnlBztMg";
 var electricity_value = getElectricityValue();
 
-const response = fetch("https://www.carboninterface.com/api/v1/estimates", {
+const response2 = fetch("https://www.carboninterface.com/api/v1/estimates", {
   method: "POST",
   mode: "cors",
   headers: {
@@ -46,12 +46,44 @@ const response = fetch("https://www.carboninterface.com/api/v1/estimates", {
     state: "fl",
   }),
 })
-  .then(function (response) {
-    console.log(response);
-    return response.json();
+  .then(function (response2) {
+    console.log(response2);
+    return response2.json();
   })
   .then(function (data) {
     console.log(data.data.attributes.carbon_mt);
   });
 
+// ADDING Content for Carbon Interface API
+
+
+var appKey = 'HySkTwvhMPAKSFnlBztMg'
+var electricity_value = getElectricityValue()
+
+
+const response = fetch('https://www.carboninterface.com/api/v1/estimates', {
+    method: 'POST',
+    mode: 'cors',
+    headers: {
+      'Authorization': `Bearer ${appKey}`,
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify({
+      "type": "electricity",
+      "electricity_unit": "mwh",
+      "electricity_value": .42,
+      "country": "us",
+      "state": "fl"
+    })}).then(function (response2) {
+        console.log(response2)
+      return response2.json();
+    })
+    .then(function (data) {
+      console.log(data.data.attributes.carbon_mt);
+      console.log(data.data.attributes);
+    });
+
+    function getElectricityValue() {
+        // ask the user a series of questions to get data for estimates
+    }
 function getElectricityValue() {}
