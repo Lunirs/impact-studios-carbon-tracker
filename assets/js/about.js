@@ -12,6 +12,11 @@ document.addEventListener("DOMContentLoaded", function () {
 
 instance.getSelectedValues();
 
+
+// text area 
+$('#textarea1').val('New Text');
+  M.textareaAutoResize($('#textarea1'));
+
 // ADDING Content for Carbon Interface API
 
 var appKey = "HySkTwvhMPAKSFnlBztMg";
