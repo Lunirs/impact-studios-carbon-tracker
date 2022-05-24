@@ -12,10 +12,6 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 
-// text area 
-$('#textarea1').val('');
-  M.textareaAutoResize($('#textarea1'));
-
 
 // ADDING Content for Carbon Interface API
 
