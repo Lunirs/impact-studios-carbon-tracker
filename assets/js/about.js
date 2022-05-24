@@ -10,12 +10,11 @@ document.addEventListener("DOMContentLoaded", function () {
   var instances = M.FormSelect.init(elems);
 });
 
-instance.getSelectedValues();
+// instance.getSelectedValues();
 
-
-// text area 
-$('#textarea1').val('New Text');
-  M.textareaAutoResize($('#textarea1'));
+// text area
+$("#textarea1").val("New Text");
+M.textareaAutoResize($("#textarea1"));
 
 // ADDING Content for Carbon Interface API
 
