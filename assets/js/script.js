@@ -21,10 +21,21 @@ fetch("https://api.thenewsapi.com/v1/news/all?" + query, requestOptions)
   .then((result) => console.log(result))
   .catch((error) => console.log("error", error));
 
+// modal initialization 
 document.addEventListener("DOMContentLoaded", function () {
   var elems = document.querySelectorAll(".modal");
   var instances = M.Modal.init(elems);
 });
+
+
+// form initilization
+document.addEventListener('DOMContentLoaded', function() {
+  var elems = document.querySelectorAll('select');
+  var instances = M.FormSelect.init(elems);
+});
+
+instance.getSelectedValues();
+
 
 // ADDING Content for Carbon Interface API
 
