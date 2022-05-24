@@ -8,12 +8,12 @@ document.addEventListener("DOMContentLoaded", function () {
 document.addEventListener("DOMContentLoaded", function () {
   var elems = document.querySelectorAll("select");
   var instances = M.FormSelect.init(elems);
+  instances.getSelectedValues();
 });
-instances.getSelectedValues();
 
 
 // text area 
-$('#textarea1').val('New Text');
+$('#textarea1').val('');
   M.textareaAutoResize($('#textarea1'));
 
 
@@ -21,7 +21,7 @@ $('#textarea1').val('New Text');
 
 var appKey = "FCoeGHOGk5VmFyLJVI78lw";
 // var electricity_value = getElectricityValue();
-var legobject = [{"departure_airport": `${departure var}`, "destination_airport": "yyz"},
+var legobject = [{"departure_airport": `sfo`, "destination_airport": "yyz"},
 {"departure_airport": "yyz", "destination_airport": "sfo"}]
 
 const response2 = fetch("https://www.carboninterface.com/api/v1/estimates", {
@@ -45,5 +45,18 @@ const response2 = fetch("https://www.carboninterface.com/api/v1/estimates", {
     console.log(data.data.attributes.carbon_mt);
   });
 
+
+
+$("#submitBtn").on("click", function() { 
+  var userInput = $("#flight-num").val()
   
-  for (i = 0; i < )
+})
+
+
+
+
+  
+  
+  
+    
+  

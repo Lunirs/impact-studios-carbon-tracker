@@ -98,16 +98,16 @@
           <h4><strong>Carbon Emission Survey</strong></h4>
           
           <!-- question structure -->
-          <div class="input-field col s12">
+          <form class="input-field col s12">
             <div class="input-field col s12">
-              <textarea id="textarea1" class="materialize-textarea"></textarea>
+              <input id="flight-num" class="validate" type="text" placeholder="5">
               <label for="textarea1">How Many Flights Have You Taken This Year?</label>
             </div>
-          </div>
+        
 
             <div class="input-field col s12">
               <textarea id="textarea2" class="materialize-textarea"></textarea>
-              <label for="textarea2">What Airport Do You Departure From?</label>
+              <label for="textarea2"></label>
             </div>
           </div>
         
@@ -143,20 +143,15 @@
             </select>
             <label>Images in select</label>
           </div>
-        
-          <label>Browser Select</label>
-          <select class="browser-default">
-            <option value="" disabled selected>Choose your option</option>
-            <option value="1">Option 1</option>
-            <option value="2">Option 2</option>
-            <option value="3">Option 3</option>
-          </select>
-        </div>
-        <div class="modal-footer">
-          <a href="#!" class="modal-close waves-effect waves-green btn-flat"
-            >CLOSE</a
-          >
-        </div>
+      
+          <div class="modal-footer">
+            <a href="#!" class="modal-close waves-effect waves-green btn-flat"
+              >CLOSE</a
+            >
+            <a href="" class="modal-submit waves-effect waves-green btn-flat" id="submitBtn">SUBMIT</a>
+            </div>
+            </div>
+          </form>
 </body>
 
   <!-- Compiled and minified JavaScript -->
