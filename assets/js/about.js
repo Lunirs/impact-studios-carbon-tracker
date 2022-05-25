@@ -8,7 +8,7 @@ document.addEventListener("DOMContentLoaded", function () {
 document.addEventListener("DOMContentLoaded", function () {
   var elems = document.querySelectorAll("select");
   var instances = M.FormSelect.init(elems);
-  instances.getSelectedValues();
+  // instances.getSelectedValues();
 });
 
 
@@ -45,13 +45,30 @@ const response2 = fetch("https://www.carboninterface.com/api/v1/estimates", {
   });
 
 
-
-$("#submitBtn").on("click", function() { 
+$("#submitBtn").on("click", function(event) { 
+  event.preventDefault()
   var userInput = $("#flight-num").val()
-  
+  localStorage.setItem('flight-num', userInput)
+  console.log(userInput)
+  var num = localStorage.getItem('flight-num')
+  console.log("hope"+num)
 })
 
+function renderNewEl(){
+  var num = localStorage.getItem('flight-num')
+  console.log("hope"+num)
+}
 
+
+
+
+
+
+
+// document.querySelector("#id-checkbox").addEventListener("click", function(event) {
+//   document.getElementById("output-box").innerHTML += "Sorry! <code>preventDefault()</code> won't let you check this!<br>";
+//   event.preventDefault();
+// }, false);
 
 
   
