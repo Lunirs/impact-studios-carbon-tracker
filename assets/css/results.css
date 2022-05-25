@@ -14,8 +14,9 @@ main {
 
 .jumbo {
   background: lightblue;
-  width: fit-content;
   height: 300px;
+  margin-top: -40px;
+  
 }
 
 .surveyBtn {
