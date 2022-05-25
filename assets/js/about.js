@@ -51,19 +51,60 @@ $("#submitBtn").on("click", function(event) {
   console.log("hope"+num)
 })
 
+var modalEl = document.getElementById('modal1');
+console.log(modalEl);
+
 function renderNewEl(){
-  var num = localStorage.getItem('fligth-num')
-  console.log("hope"+num)
+  var num = localStorage.getItem('flight-num')
+  for (i = 0; i < num; i++) {
+    var con = document.createElement('div');
+    con.classList = "input-field col s12"
+    modalEl.appendChild(con);
+
+    var con2 = document.createElement('div');
+    con2.classList = "row"
+    con.appendChild(con2);
+
+    var con3 = document.createElement('div');
+    con3.classList = "col"
+    con2.appendChild(con3);
+
+    var deEl = document.createElement('input')
+    deEl.classList = "validate"
+    deEl.innerHTML = "Departing Airport"
+  }
+
 }
 
-// document.querySelector("#id-checkbox").addEventListener("click", function(event) {
-//   document.getElementById("output-box").innerHTML += "Sorry! <code>preventDefault()</code> won't let you check this!<br>";
-//   event.preventDefault();
-// }, false);
+// for (var i = 0; i < 5; i++){
+//                 var cardEl = document.createElement('div');
+//                 cardEl.classList = 'indCard'
+//                 cardContainer.appendChild(cardEl)
+                
+//                 tempCon = document.createElement('div')
+//                 var temp = "Temp: " + (data.daily[i].temp.day)
+//                 tempCon.textContent = temp;
+//                 cardEl.appendChild(tempCon)
 
+{/* <form class="input-field col s12" id="form">
+            <div class="input-field col s12">
+              <input id="flight-num" class="validate" type="text" placeholder="5">
+              <label for="textarea1">How Many Flights Have You Taken This Year?</label>
+            </div>
+        
 
-  
-  
+            <div class="input-field col s12">
+              <div class="row">
+                <div class="col">
+                  <input id="departure" class="validate" type="text" placeholder="SFO">
+                  <label for="textarea">Departing Airport</label>
+                </div>
+              
+              <div class = "col">
+                <input id="arrival" class="col validate" type="text" placeholder="JFK">
+                <label for="textarea">Destination Airport</label>
+              </div>  
+            </div> */}
   
     
   
