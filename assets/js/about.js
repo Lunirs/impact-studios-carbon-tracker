@@ -13,7 +13,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 // ADDING Content for Carbon Interface API
 
-var appKey = "FCoeGHOGk5VmFyLJVI78lw";
+var appKey = "gGHQT0IwggWO9DJewNToyw";
 // var electricity_value = getElectricityValue();
 var legobject = [
   { departure_airport: `sfo`, destination_airport: "yyz" },
