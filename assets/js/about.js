@@ -50,38 +50,35 @@ $("#submitBtn").on("click", function (event) {
   console.log("hope" + num);
 });
 
-$("#submitBtn").on("click", function(event) { 
-  event.preventDefault()
-  var userInput = $("#flight-num").val()
-  localStorage.setItem('flight-num', userInput)
-  console.log(userInput)
-  var num = localStorage.getItem('flight-num')
-  console.log("hope"+num)
-})
+$("#submitBtn").on("click", function (event) {
+  event.preventDefault();
+  var userInput = $("#flight-num").val();
+  localStorage.setItem("flight-num", userInput);
+  console.log(userInput);
+  var num = localStorage.getItem("flight-num");
+  console.log("hope" + num);
+});
 
-var modalEl = document.getElementById('modal1');
+var modalEl = document.getElementById("modal1");
 console.log(modalEl);
 
-function renderNewEl(){
-  var num = localStorage.getItem('flight-num')
+function renderNewEl() {
+  var num = localStorage.getItem("flight-num");
   for (i = 0; i < num; i++) {
-    var con = document.createElement('div');
-    con.classList = "input-field col s12"
+    var con = document.createElement("div");
+    con.classList = "input-field col s12";
     modalEl.appendChild(con);
 
-    var con2 = document.createElement('div');
-    con2.classList = "row"
+    var con2 = document.createElement("div");
+    con2.classList = "row";
     con.appendChild(con2);
 
-    var con3 = document.createElement('div');
-    con3.classList = "col"
+    var con3 = document.createElement("div");
+    con3.classList = "col";
     con2.appendChild(con3);
 
-    var deEl = document.createElement('input')
-    deEl.classList = "validate"
-    deEl.innerHTML = "Departing Airport"
+    var deEl = document.createElement("input");
+    deEl.classList = "validate";
+    deEl.innerHTML = "Departing Airport";
   }
-
 }
-
-  

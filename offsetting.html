@@ -53,26 +53,88 @@
         <li><a href="badges.html">Components</a></li>
         <li><a href="collapsible.html">JavaScript</a></li>
       </ul>
+      <div class="row jumbo">
+        <h1>Jumbo Content</h1>
+        <p>
+          This is a p tag and Lorem ipsum dolor sit amet, consectetur
+          adipisicing elit. Dolore, maiores quae temporibus perspiciatis alias
+          nostrum hic dolorum tempora optio eius deserunt ad, officiis
+          consequatur assumenda ab reprehenderit nesciunt magnam cumque?
+        </p>
+        <div class="col">
+          <!-- Modal Trigger -->
+          <a
+            class="waves-effect waves-light btn modal-trigger offsetBtn"
+            href="#modal1"
+            >Save The Earth</a
+          >
+        </div>
+      </div>
     </header>
 
     <main>
       <!-- Modal Trigger -->
-      <a class="waves-effect waves-light btn modal-trigger" href="#modal1"
-        >Save The Earth</a
-      >
 
       <!-- Modal Structure -->
-      <div id="modal1" class="modal modal-fixed-footer">
+      <div id="modal1" class="modal">
         <div class="modal-content">
-          <h4>Offset Your Carbon Emissions</h4>
-          <p>A bunch of text</p>
-        </div>
-        <div class="modal-footer">
-          <a href="#!" class="modal-close waves-effect waves-green btn-flat"
-            >Agreement</a
-          >
+          <h4><strong>Offset your Emissions!</strong></h4>
+
+          <!-- question structure -->
+          <form class="input-field col s12" id="form1">
+            <div class="input-field col s12">
+              <input
+                id="emission-results-input"
+                class="validate"
+                type="text"
+                placeholder="0.43"
+              />
+              <label for="textarea1"
+                >Please enter your emission value you received from your
+                results!</label
+              >
+            </div>
+            <div class="modal-footer">
+              <a href="#!" class="modal-close waves-effect waves-green btn-flat"
+                >CLOSE</a
+              >
+              <a
+                href=""
+                class="modal-submit waves-effect waves-green btn-flat"
+                id="submitBtn"
+                >SUBMIT</a
+              >
+            </div>
+          </form>
         </div>
       </div>
+      <table class="highlight">
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Item Name</th>
+            <th>Item Price</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <tr>
+            <td>Alvin</td>
+            <td>Eclair</td>
+            <td>$0.87</td>
+          </tr>
+          <tr>
+            <td>Alan</td>
+            <td>Jellybean</td>
+            <td>$3.76</td>
+          </tr>
+          <tr>
+            <td>Jonathan</td>
+            <td>Lollipop</td>
+            <td>$7.00</td>
+          </tr>
+        </tbody>
+      </table>
     </main>
     <footer class="page-footer">
       <div class="container">
