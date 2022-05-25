@@ -11,17 +11,14 @@ document.addEventListener("DOMContentLoaded", function () {
   // instances.getSelectedValues();
 });
 
-
-
-
-
-
 // ADDING Content for Carbon Interface API
 
 var appKey = "FCoeGHOGk5VmFyLJVI78lw";
 // var electricity_value = getElectricityValue();
-var legobject = [{"departure_airport": `sfo`, "destination_airport": "yyz"},
-{"departure_airport": "yyz", "destination_airport": "sfo"}]
+var legobject = [
+  { departure_airport: `sfo`, destination_airport: "yyz" },
+  { departure_airport: "yyz", destination_airport: "sfo" },
+];
 
 const response2 = fetch("https://www.carboninterface.com/api/v1/estimates", {
   method: "POST",
@@ -44,6 +41,14 @@ const response2 = fetch("https://www.carboninterface.com/api/v1/estimates", {
     console.log(data.data.attributes.carbon_mt);
   });
 
+$("#submitBtn").on("click", function (event) {
+  event.preventDefault();
+  var userInput = $("#flight-num").val();
+  localStorage.setItem("flight-num", userInput);
+  console.log(userInput);
+  var num = localStorage.getItem("flight-num");
+  console.log("hope" + num);
+});
 
 $("#submitBtn").on("click", function(event) { 
   event.preventDefault()
@@ -54,25 +59,29 @@ $("#submitBtn").on("click", function(event) {
   console.log("hope"+num)
 })
 
+var modalEl = document.getElementById('modal1');
+console.log(modalEl);
+
 function renderNewEl(){
   var num = localStorage.getItem('flight-num')
-  console.log("hope"+num)
+  for (i = 0; i < num; i++) {
+    var con = document.createElement('div');
+    con.classList = "input-field col s12"
+    modalEl.appendChild(con);
+
+    var con2 = document.createElement('div');
+    con2.classList = "row"
+    con.appendChild(con2);
+
+    var con3 = document.createElement('div');
+    con3.classList = "col"
+    con2.appendChild(con3);
+
+    var deEl = document.createElement('input')
+    deEl.classList = "validate"
+    deEl.innerHTML = "Departing Airport"
+  }
+
 }
 
-
-
-
-
-
-
-// document.querySelector("#id-checkbox").addEventListener("click", function(event) {
-//   document.getElementById("output-box").innerHTML += "Sorry! <code>preventDefault()</code> won't let you check this!<br>";
-//   event.preventDefault();
-// }, false);
-
-
-  
-  
-  
-    
   

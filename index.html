@@ -96,7 +96,7 @@
           <h4><strong>Carbon Emission Survey</strong></h4>
           
           <!-- question structure -->
-          <form class="input-field col s12">
+          <form class="input-field col s12" id="form1">
             <div class="input-field col s12">
               <input id="flight-num" class="validate" type="text" placeholder="5">
               <label for="textarea1">How Many Flights Have You Taken This Year?</label>
@@ -104,35 +104,18 @@
         
 
             <div class="input-field col s12">
-              <textarea id="textarea2" class="materialize-textarea"></textarea> 
-              <label for="textarea2"></label>
+              <div class="row">
+                <div class="col">
+                  <input id="departure" class="validate" type="text" placeholder="SFO">
+                  <label for="textarea">Departing Airport</label>
+                </div>
+              
+              <div class = "col">
+                <input id="arrival" class="col validate" type="text" placeholder="JFK">
+                <label for="textarea">Destination Airport</label>
+              </div>  
             </div>
-          </div>
-        
-          <div class="input-field col s12">
-            <select>
-              <optgroup label="team 1">
-                <option value="1">Option 1</option>
-                <option value="2">Option 2</option>
-              </optgroup>
-              <optgroup label="team 2">
-                <option value="3">Option 3</option>
-                <option value="4">Option 4</option>
-              </optgroup>
-            </select>
-            <label>Optgroups</label>
-          </div>
-        
-          <div class="input-field col s12 m6">
-            <select class="icons">
-              <option value="" disabled selected>Choose your option</option>
-              <option value="" data-icon="" class="left">example 1</option>
-              <option value="" data-icon="" class="left">example 2</option>
-              <option value="" data-icon="" class="left">example 3</option>
-            </select>
-            <label>Images in select</label>
-          </div>
-      
+            
           <div class="modal-footer">
             <a href="#!" class="modal-close waves-effect waves-green btn-flat"
               >CLOSE</a
