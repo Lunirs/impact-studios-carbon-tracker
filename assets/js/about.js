@@ -14,33 +14,29 @@ document.addEventListener("DOMContentLoaded", function () {
 // ADDING Content for Carbon Interface API
 
 var appKey = "gGHQT0IwggWO9DJewNToyw";
-// var electricity_value = getElectricityValue();
-var legobject = [
-  { departure_airport: `sfo`, destination_airport: "yyz" },
-  { departure_airport: "yyz", destination_airport: "sfo" },
-];
 
-const response2 = fetch("https://www.carboninterface.com/api/v1/estimates", {
-  method: "POST",
-  mode: "cors",
-  headers: {
-    Authorization: `Bearer ${appKey}`,
-    "Content-Type": "application/json",
-  },
-  body: JSON.stringify({
-    type: "flight",
-    passengers: 1,
-    legs: legobject,
-  }),
-})
-  .then(function (response2) {
-    console.log(response2);
-    return response2.json();
+function getResponse2(legobject){
+  const response2 = fetch("https://www.carboninterface.com/api/v1/estimates", {
+    method: "POST",
+    mode: "cors",
+    headers: {
+      Authorization: `Bearer ${appKey}`,
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({
+      type: "flight",
+      passengers: 1,
+      legs: legobject,
+    }),
   })
-  .then(function (data) {
-    console.log(data.data.attributes.carbon_mt);
-  });
-
+    .then(function (response2) {
+      console.log(response2);
+      return response2.json();
+    })
+    .then(function (data) {
+      console.log(data.data.attributes.carbon_mt);
+    });
+}
 $("#submitBtn").on("click", function (event) {
   event.preventDefault();
   var userInput = $("#flight-num").val();
@@ -50,35 +46,89 @@ $("#submitBtn").on("click", function (event) {
   console.log("hope" + num);
 });
 
-$("#submitBtn").on("click", function (event) {
-  event.preventDefault();
-  var userInput = $("#flight-num").val();
-  localStorage.setItem("flight-num", userInput);
-  console.log(userInput);
-  var num = localStorage.getItem("flight-num");
-  console.log("hope" + num);
-});
+$("#submitBtn").on("click", function(event) { 
+  event.preventDefault()
+  var userInput = $("#flight-num").val()
+  localStorage.setItem('flight-num', userInput)
+  var num = localStorage.getItem('flight-num')
+  renderNewEl(num);
+})
 
-var modalEl = document.getElementById("modal1");
+var modalEl = document.getElementById('form1');
 console.log(modalEl);
 
-function renderNewEl() {
-  var num = localStorage.getItem("flight-num");
+function renderNewEl(){  
+  var num = JSON.parse(localStorage.getItem('flight-num'))
+
   for (i = 0; i < num; i++) {
-    var con = document.createElement("div");
-    con.classList = "input-field col s12";
+  // container for both the departure and destination
+    var con = document.createElement('div');
+    con.classList = "input-field col s12"
     modalEl.appendChild(con);
-
-    var con2 = document.createElement("div");
-    con2.classList = "row";
+    
+    var con2 = document.createElement('div');
+    con2.classList = "row flight"
     con.appendChild(con2);
-
-    var con3 = document.createElement("div");
-    con3.classList = "col";
+    
+    var con3 = document.createElement('div');
+    con3.classList = "col"
     con2.appendChild(con3);
 
-    var deEl = document.createElement("input");
-    deEl.classList = "validate";
-    deEl.innerHTML = "Departing Airport";
+    var departureEl = document.createElement('input')
+    departureEl.classList = "validate depart"
+    departureEl.type = "text"
+    departureEl.placeholder = "SFO"
+    con3.appendChild(departureEl)
+
+    var label = document.createElement('label')
+    label.innerHTML = "Departing Airport"
+    con3.appendChild(label)
+
+// content for Destination within For Loop
+
+    var dcon3 = document.createElement('div');
+    dcon3.classList = "col"
+    con2.appendChild(dcon3);
+
+    var destinationEl = document.createElement('input')
+    destinationEl.classList = " col validate destinate"
+    destinationEl.type = "text"
+    destinationEl.placeholder = "JFK"
+    dcon3.appendChild(destinationEl)
+
+    var label2 = document.createElement('label')
+    label2.innerHTML = "Destination Airport"
+    dcon3.appendChild(label2)
   }
+// Creating the Second Submit button
+    var submitBtn2 = document.createElement('a')
+    submitBtn2.id = "submitBtn2"
+    submitBtn2.classList = "modal-submit waves-effect waves-green btn-flat"
+    submitBtn2.textContent = "SUBMIT"
+    modalEl.appendChild(submitBtn2)
+
+// Have empty array
+// flight num = 0 
+
+
+$("#submitBtn2").on("click", function (event2) {
+  // console.log(document.querySelectorAll(".flight"))
+  var flightContainer = document.querySelectorAll(".flight")
+  var flightArray = [ ]
+  for (var i =0; i < flightContainer.length; i++){
+    var departure = flightContainer[i].children[0].children[0].value
+    var destination = flightContainer[i].children[1].children[0].value
+    flightArray.push({departure_airport: departure, destination_airport: destination})
+  }
+  localStorage.setItem("flights", JSON.stringify(flightArray))
+  getResponse2(flightArray)
+});
+  
 }
+
+
+
+
+
+
+
