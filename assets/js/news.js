@@ -38,8 +38,8 @@ fetch(`https://api.thenewsapi.com/v1/news/all?${query}${requestOptions}`)
       cardCol.addClass("col s12 m7");
       var card = $("<div>");
       card.addClass("card");
+      card.attr("data-aos", "flip-up");
       var cardImgContainer = $("<div>");
-      card.addClass("card-image");
       var cardImg = $("<img>").attr("src", `${articleImg}`);
       cardImg.attr("id", "card-img");
       var cardTitle = $("<span>").text(`${articleTitle}`);
@@ -50,6 +50,7 @@ fetch(`https://api.thenewsapi.com/v1/news/all?${query}${requestOptions}`)
       var cardActionContain = $("<div>");
       var cardAction = $("<a>")
         .attr("href", `${articleURL}`)
+        .attr("target", "blank")
         .text(`Click here to read more!`);
 
       cardImg.appendTo(cardImgContainer);
@@ -64,3 +65,5 @@ fetch(`https://api.thenewsapi.com/v1/news/all?${query}${requestOptions}`)
       cardRow.appendTo($("#card-container"));
     }
   });
+
+AOS.init();

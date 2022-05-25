@@ -11,14 +11,14 @@ document.addEventListener("DOMContentLoaded", function () {
   // instances.getSelectedValues();
 });
 
-
-
 // ADDING Content for Carbon Interface API
 
 var appKey = "FCoeGHOGk5VmFyLJVI78lw";
 // var electricity_value = getElectricityValue();
-var legobject = [{"departure_airport": `sfo`, "destination_airport": "yyz"},
-{"departure_airport": "yyz", "destination_airport": "sfo"}]
+var legobject = [
+  { departure_airport: `sfo`, destination_airport: "yyz" },
+  { departure_airport: "yyz", destination_airport: "sfo" },
+];
 
 const response2 = fetch("https://www.carboninterface.com/api/v1/estimates", {
   method: "POST",
@@ -41,29 +41,21 @@ const response2 = fetch("https://www.carboninterface.com/api/v1/estimates", {
     console.log(data.data.attributes.carbon_mt);
   });
 
+$("#submitBtn").on("click", function (event) {
+  event.preventDefault();
+  var userInput = $("#flight-num").val();
+  localStorage.setItem("flight-num", userInput);
+  console.log(userInput);
+  var num = localStorage.getItem("flight-num");
+  console.log("hope" + num);
+});
 
-$("#submitBtn").on("click", function(event) { 
-  event.preventDefault()
-  var userInput = $("#flight-num").val()
-  localStorage.setItem('flight-num', userInput)
-  console.log(userInput)
-  var num = localStorage.getItem('flight-num')
-  console.log("hope"+num)
-})
-
-function renderNewEl(){
-  var num = localStorage.getItem('fligth-num')
-  console.log("hope"+num)
+function renderNewEl() {
+  var num = localStorage.getItem("fligth-num");
+  console.log("hope" + num);
 }
 
 // document.querySelector("#id-checkbox").addEventListener("click", function(event) {
 //   document.getElementById("output-box").innerHTML += "Sorry! <code>preventDefault()</code> won't let you check this!<br>";
 //   event.preventDefault();
 // }, false);
-
-
-  
-  
-  
-    
-  
