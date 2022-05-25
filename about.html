@@ -32,7 +32,12 @@
     </nav>
 <!-- Adding Jumbo Section -->
 
+<<<<<<< HEAD
     <div class="row jumbo">
+=======
+    <div class="row jumbo container">
+      <div class ='col jumbo-content'>
+>>>>>>> 45fb83ebd4b1d1c17986981631bcd66d09a68075
         <h1>Jumbo Content</h1>
         <p>This is a p tag and Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolore, maiores quae temporibus perspiciatis alias nostrum hic dolorum tempora optio eius deserunt ad, officiis consequatur assumenda ab reprehenderit nesciunt magnam cumque?</p> 
         <div class ='col'>
@@ -96,21 +101,17 @@
           <h4><strong>Carbon Emission Survey</strong></h4>
           
           <!-- question structure -->
-          <div class="input-field col s12">
+          <form class="input-field col s12">
             <div class="input-field col s12">
-              <textarea id="textarea1" class="materialize-textarea"></textarea>
-              <label for="textarea1">How Often Do You Take Flights Yearly?</label>
+              <input id="flight-num" class="validate" type="text" placeholder="5">
+              <label for="textarea1">How Many Flights Have You Taken This Year?</label>
             </div>
-          </div>
         
-          <div class="input-field col s12">
-            <select multiple>
-              <option value="" disabled selected>Choose your option</option>
-              <option value="1">Option 1</option>
-              <option value="2">Option 2</option>
-              <option value="3">Option 3</option>
-            </select>
-            <label>What Airport Do You Departure From? </label>
+
+            <div class="input-field col s12">
+              <textarea id="textarea2" class="materialize-textarea"></textarea>
+              <label for="textarea2"></label>
+            </div>
           </div>
         
           <div class="input-field col s12">
@@ -145,20 +146,15 @@
             </select>
             <label>Images in select</label>
           </div>
-        
-          <label>Browser Select</label>
-          <select class="browser-default">
-            <option value="" disabled selected>Choose your option</option>
-            <option value="1">Option 1</option>
-            <option value="2">Option 2</option>
-            <option value="3">Option 3</option>
-          </select>
-        </div>
-        <div class="modal-footer">
-          <a href="#!" class="modal-close waves-effect waves-green btn-flat"
-            >CLOSE</a
-          >
-        </div>
+      
+          <div class="modal-footer">
+            <a href="#!" class="modal-close waves-effect waves-green btn-flat"
+              >CLOSE</a
+            >
+            <a href="" class="modal-submit waves-effect waves-green btn-flat" id="submitBtn">SUBMIT</a>
+            </div>
+            </div>
+          </form>
 </body>
 
   <!-- Compiled and minified JavaScript -->
