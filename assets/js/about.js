@@ -14,10 +14,6 @@ document.addEventListener("DOMContentLoaded", function () {
 // ADDING Content for Carbon Interface API
 
 var appKey = "gGHQT0IwggWO9DJewNToyw";
-// var legobject = [
-//   { departure_airport: `sfo`, destination_airport: "yyz" },
-//   { departure_airport: "yyz", destination_airport: "sfo" },
-// ];
 
 function getResponse2(legobject){
   const response2 = fetch("https://www.carboninterface.com/api/v1/estimates", {

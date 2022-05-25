@@ -9,6 +9,12 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
     />
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+      integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf"
+      crossorigin="anonymous"
+    />
     <link rel="icon" type="image/x-icon" href="./assets/img/favicon.png" />
 
     <link rel="stylesheet" href="assets\css\results.css" />
@@ -33,14 +39,21 @@
         <div class="nav-content">
           <ul class="tabs tabs-transparent">
             <li class="tab" id="about">
-              <a class="active" href="index.html">About</a>
+              <a href="index.html">About</a>
             </li>
-            <li class="tab"><a href="results.html">Results</a></li>
+            <li class="tab"><a class="active" href="results.html">Results</a></li>
             <li class="tab"><a href="offsetting.html">Offsetting</a></li>
             <li class="tab"><a href="news.html">News</a></li>
           </ul>
         </div>
       </nav>
+
+      <div class="row jumbo">
+        <h1><center>WHAT'S YOUR CARBON FOOTPRINT &#129462; 🌎</center></h1>
+        <p>
+          Below are your results from the survey...
+        </p>
+        <div class="col">
 
       <ul class="sidenav" id="mobile-demo">
         <li><a href="sass.html">Sass</a></li>
@@ -48,9 +61,83 @@
         <li><a href="collapsible.html">JavaScript</a></li>
       </ul>
     </header>
+
     <main class="container-fluid">
       <div id="card-container"></div>
+      <table class="centered">
+        <thead>
+          <tr>
+            <th>Number of Flights</th>
+            <th>Flight Distance (mi)</th>
+            <th>Carbon Emission</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+        </tbody>
+      </table>
     </main>
+
+    <footer class="page-footer">
+      <div class="container">
+        <div class="row">
+          <div class="col l6 s12">
+            <h5 class="white-text">
+              Thank you for your interest in saving our planet.
+            </h5>
+            <p class="grey-text text-lighten-4">
+              To learn more about our company and contact us, please see the
+              links to the side.
+            </p>
+          </div>
+          <div class="col l4 offset-l2 s12">
+            <h5 class="white-text">Contact Us</h5>
+            <ul id="footer-ul">
+              <li>
+                <a class="grey-text text-lighten-3" href="#!">Email Us</a>
+              </li>
+              <li><a class="grey-text text-lighten-3" href="#!">Call Us</a></li>
+              <li>
+                <a class="grey-text text-lighten-3" href="#!"
+                  ><i class="fab fa-twitter"></i
+                ></a>
+              </li>
+              <li>
+                <a class="grey-text text-lighten-3" href="#!"
+                  ><i class="fab fa-instagram"></i
+                ></a>
+              </li>
+              <li>
+                <a class="grey-text text-lighten-3" href="#!"
+                  ><i class="fab fa-facebook"></i
+                ></a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="footer-copyright">
+        <div class="container">
+          © 2022 Impact Studios
+          <a class="grey-text text-lighten-4 right" href="#!">Privacy Policy</a>
+        </div>
+      </div>
+    </footer>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 
     <script
