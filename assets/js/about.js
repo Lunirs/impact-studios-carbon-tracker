@@ -11,14 +11,14 @@ document.addEventListener("DOMContentLoaded", function () {
   // instances.getSelectedValues();
 });
 
-
-
 // ADDING Content for Carbon Interface API
 
 var appKey = "FCoeGHOGk5VmFyLJVI78lw";
 // var electricity_value = getElectricityValue();
-var legobject = [{"departure_airport": `sfo`, "destination_airport": "yyz"},
-{"departure_airport": "yyz", "destination_airport": "sfo"}]
+var legobject = [
+  { departure_airport: `sfo`, destination_airport: "yyz" },
+  { departure_airport: "yyz", destination_airport: "sfo" },
+];
 
 const response2 = fetch("https://www.carboninterface.com/api/v1/estimates", {
   method: "POST",
@@ -41,6 +41,14 @@ const response2 = fetch("https://www.carboninterface.com/api/v1/estimates", {
     console.log(data.data.attributes.carbon_mt);
   });
 
+$("#submitBtn").on("click", function (event) {
+  event.preventDefault();
+  var userInput = $("#flight-num").val();
+  localStorage.setItem("flight-num", userInput);
+  console.log(userInput);
+  var num = localStorage.getItem("flight-num");
+  console.log("hope" + num);
+});
 
 $("#submitBtn").on("click", function(event) { 
   event.preventDefault()
@@ -76,35 +84,4 @@ function renderNewEl(){
 
 }
 
-// for (var i = 0; i < 5; i++){
-//                 var cardEl = document.createElement('div');
-//                 cardEl.classList = 'indCard'
-//                 cardContainer.appendChild(cardEl)
-                
-//                 tempCon = document.createElement('div')
-//                 var temp = "Temp: " + (data.daily[i].temp.day)
-//                 tempCon.textContent = temp;
-//                 cardEl.appendChild(tempCon)
-
-{/* <form class="input-field col s12" id="form">
-            <div class="input-field col s12">
-              <input id="flight-num" class="validate" type="text" placeholder="5">
-              <label for="textarea1">How Many Flights Have You Taken This Year?</label>
-            </div>
-        
-
-            <div class="input-field col s12">
-              <div class="row">
-                <div class="col">
-                  <input id="departure" class="validate" type="text" placeholder="SFO">
-                  <label for="textarea">Departing Airport</label>
-                </div>
-              
-              <div class = "col">
-                <input id="arrival" class="col validate" type="text" placeholder="JFK">
-                <label for="textarea">Destination Airport</label>
-              </div>  
-            </div> */}
-  
-    
   
