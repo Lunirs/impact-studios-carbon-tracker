@@ -8,6 +8,10 @@ main {
   flex: 1 0 auto;
 }
 
+#title {
+  font-family: 'Blaka', cursive;
+}
+
 #card-container {
   display: flex;
   flex-direction: column;
