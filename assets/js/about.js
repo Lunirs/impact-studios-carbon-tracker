@@ -18,10 +18,8 @@ var flightDistance = [];
 var flightNum = [];
 var appKey = "dKabCmH1zS7T44G5drLzQ";
 
-
-
 function init() {
-  flightArray = JSON.parse(localStorage.getItem("flights")) || [];
+  flightArray = JSON.parse(localStorage.getItem("flightsArray")) || [];
   carbonEmissionResult =
     JSON.parse(localStorage.getItem("carbonEmission")) || [];
   flightDistance = JSON.parse(localStorage.getItem("flight-distance")) || [];
@@ -60,19 +58,12 @@ function getResponse2(legobject) {
 
 $("#submitBtn").on("click", function (event) {
   event.preventDefault();
-<<<<<<< HEAD
-  var userInput = $("#flight-num").val();
-  localStorage.setItem("flight-num", userInput);
-  var num = localStorage.getItem("flight-num") || [];
-  flightNum.push(num);
-=======
   var num = $("#flight-num").val();
   // localStorage.setItem("flight-num", userInput);
   // var num = localStorage.getItem("flight-num");
-  flightNum.push(num)
-  localStorage.setItem("flight-num",JSON.stringify(flightNum))
-  console.log(flightNum)
->>>>>>> 93022118ecd90965bd333c1508c7f19f75f663c3
+  flightNum.push(num);
+  localStorage.setItem("flight-num", JSON.stringify(flightNum));
+  console.log(flightNum);
   renderNewEl(num);
 });
 
@@ -80,7 +71,7 @@ var modalEl = document.getElementById("form1");
 console.log(modalEl);
 
 function renderNewEl() {
-  var num = JSON.parse(localStorage.getItem("flight-num")) || [];
+  var num = JSON.parse(localStorage.getItem("flight-num"));
 
   for (i = 0; i < num; i++) {
     // container for both the departure and destination
@@ -141,7 +132,8 @@ function renderNewEl() {
       var destination = flightContainer[i].children[1].children[0].value;
       flightArray.push({
         departure_airport: departure,
-        destination_airport: destination,})
+        destination_airport: destination,
+      });
       localStorage.setItem("flights", JSON.stringify(flightArray));
     }
     getResponse2(flightArray);
