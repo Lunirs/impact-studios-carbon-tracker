@@ -1,4 +1,3 @@
-
 // modal initialization
 document.addEventListener("DOMContentLoaded", function () {
   var elems = document.querySelectorAll(".modal");
@@ -18,11 +17,11 @@ var flightArray = [];
 var flightDistance = [];
 var flightNum;
 if (!JSON.parse(localStorage.getItem("flight-num"))) {
-   flightNum = []
+  flightNum = [];
 } else {
-  flightNum = JSON.parse(localStorage.getItem("flight-num"))
-};
-console.log(flightNum)
+  flightNum = JSON.parse(localStorage.getItem("flight-num"));
+}
+console.log(flightNum);
 var appKey = "PIyW58u2ebQ7k0qbWwqJw";
 
 // initialization function
@@ -68,10 +67,10 @@ function getResponse2(legobject) {
 $("#submitBtn").on("click", function (event) {
   event.preventDefault();
   var num = $("#flight-num").val();
-  flightNum.push(num)
-  console.log("This should be the flight num array",flightNum)
-  console.log("This should be the num",num, "type of num", typeof(num))
-  localStorage.setItem("flight-num",JSON.stringify(flightNum))
+  flightNum.push(num);
+  console.log("This should be the flight num array", flightNum);
+  console.log("This should be the num", num, "type of num", typeof num);
+  localStorage.setItem("flight-num", JSON.stringify(flightNum));
   renderNewEl(num);
 });
 
@@ -81,15 +80,16 @@ console.log(modalEl);
 function renderNewEl() {
   var num = JSON.parse(localStorage.getItem("flight-num"));
   // num = JSON.stringify(num)
+
   for (i = 0; i<num.length; i++){
     num2 = parseInt(num[i])
     console.log("num2: ",num2)
     console.log("type: ",typeof(num2))
+
   }
 
   // console.log("this is the type of num: ",typeof(num2))
   // console.log("render new el running")
-  
 
   for (i = 0; i < num2; i++) {
     // container for both the departure and destination
@@ -150,7 +150,8 @@ function renderNewEl() {
       var destination = flightContainer[i].children[1].children[0].value;
       flightArray.push({
         departure_airport: departure,
-        destination_airport: destination,})
+        destination_airport: destination,
+      });
       localStorage.setItem("flights", JSON.stringify(flightArray));
     }
     getResponse2(flightArray);
