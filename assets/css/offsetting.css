@@ -62,6 +62,7 @@ main {
   align-items: center;
 }
 
+<<<<<<< HEAD
 .page-footer {
   margin-top: 100px;
   background-color: rgb(94, 5, 112);
@@ -70,3 +71,10 @@ main {
 table {
   margin-bottom: 200px;
 }
+=======
+.iframe {
+  display: block;
+  margin-left: 25%;
+  margin-right: 25%;
+}
+>>>>>>> ea985a59c2695e27d9afe4b80c1e86b35fe2c6fb
