@@ -23,7 +23,7 @@ if (!JSON.parse(localStorage.getItem("flight-num"))) {
   flightNum = JSON.parse(localStorage.getItem("flight-num"))
 };
 console.log(flightNum)
-var appKey = "dKabCmH1zS7T44G5drLzQ";
+var appKey = "PIyW58u2ebQ7k0qbWwqJw";
 
 // initialization function
 function init() {
@@ -70,6 +70,7 @@ $("#submitBtn").on("click", function (event) {
   var num = $("#flight-num").val();
   flightNum.push(num)
   console.log("This should be the flight num array",flightNum)
+  console.log("This should be the num",num, "type of num", typeof(num))
   localStorage.setItem("flight-num",JSON.stringify(flightNum))
   renderNewEl(num);
 });
@@ -79,8 +80,20 @@ console.log(modalEl);
 
 function renderNewEl() {
   var num = JSON.parse(localStorage.getItem("flight-num"));
-  console.log("render new el running")
-  for (i = 0; i < num; i++) {
+  // num = JSON.stringify(num)
+  for (i = 0; i<num.length; i++){
+    console.log(typeof(num))
+    console.log("fuck",parseInt(num))
+    num2 = parseInt(num[i])
+    console.log("num2: ",num2)
+    console.log("type: ",typeof(num2))
+  }
+
+  // console.log("this is the type of num: ",typeof(num2))
+  // console.log("render new el running")
+  
+
+  for (i = 0; i < num2; i++) {
     // container for both the departure and destination
     var con = document.createElement("div");
     con.classList = "input-field col s12";
