@@ -8,8 +8,8 @@ main {
   flex: 1 0 auto;
 }
 
-#p3 { 
-  font-family: 'Jura', sans-serif;
+#p3 {
+  font-family: "Jura", sans-serif;
 }
 
 .nav-extended {
@@ -37,18 +37,23 @@ main {
   margin-left: 20px;
   display: inline-block;
 }
-
+/* 
 .card :hover {
   width: 25%;
   margin-left: 20px;
   box-shadow: 10px 5px 5px rgb(94, 5, 112);
   height: 200px;
   border: solid black 5px;
-}
+} */
 
 .card-image {
-  width: 100%;
+  width: 25%;
   height: 160px;
+  align-items: center;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 50px;
 }
 
 #footer-ul {
