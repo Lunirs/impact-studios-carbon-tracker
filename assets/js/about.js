@@ -15,10 +15,10 @@ document.addEventListener("DOMContentLoaded", function () {
 var carbonEmissionResult = [];
 var flightArray = [];
 var flightDistance = [];
-var appKey = "ynnUxAELzSzns0KEdpJynw";
+var appKey = "dKabCmH1zS7T44G5drLzQ";
 
 function init() {
-  flightArray = JSON.parse(localStorage.getItem("flight-num")) || [];
+  flightArray = JSON.parse(localStorage.getItem("flightsArray")) || [];
   carbonEmissionResult =
     JSON.parse(localStorage.getItem("carbonEmission")) || [];
   flightDistance = JSON.parse(localStorage.getItem("flight-distance")) || [];
@@ -133,12 +133,12 @@ function renderNewEl() {
     for (var i = 0; i < flightContainer.length; i++) {
       var departure = flightContainer[i].children[0].children[0].value;
       var destination = flightContainer[i].children[1].children[0].value;
+      localStorage.setItem("flights", JSON.stringify(flightArray));
       flightArray.push({
         departure_airport: departure,
         destination_airport: destination,
       });
     }
-    localStorage.setItem("flights", JSON.stringify(flightArray));
     getResponse2(flightArray);
   });
 }
