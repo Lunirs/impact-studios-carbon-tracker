@@ -18,7 +18,7 @@ var flightDistance = [];
 var appKey = "gGHQT0IwggWO9DJewNToyw";
 
 function init() {
-  flightArray = JSON.parse(localStorage.getItem("flightArray")) || [];
+  flightArray = JSON.parse(localStorage.getItem("flight-num")) || [];
   carbonEmissionResult =
     JSON.parse(localStorage.getItem("carbonEmission")) || [];
   flightDistance = JSON.parse(localStorage.getItem("flight-distance")) || [];
