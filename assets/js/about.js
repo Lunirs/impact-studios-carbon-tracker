@@ -18,6 +18,8 @@ var flightDistance = [];
 var flightNum = [];
 var appKey = "dKabCmH1zS7T44G5drLzQ";
 
+
+
 function init() {
   flightArray = JSON.parse(localStorage.getItem("flights")) || [];
   carbonEmissionResult =
@@ -58,10 +60,19 @@ function getResponse2(legobject) {
 
 $("#submitBtn").on("click", function (event) {
   event.preventDefault();
+<<<<<<< HEAD
   var userInput = $("#flight-num").val();
   localStorage.setItem("flight-num", userInput);
   var num = localStorage.getItem("flight-num") || [];
   flightNum.push(num);
+=======
+  var num = $("#flight-num").val();
+  // localStorage.setItem("flight-num", userInput);
+  // var num = localStorage.getItem("flight-num");
+  flightNum.push(num)
+  localStorage.setItem("flight-num",JSON.stringify(flightNum))
+  console.log(flightNum)
+>>>>>>> 93022118ecd90965bd333c1508c7f19f75f663c3
   renderNewEl(num);
 });
 
@@ -114,6 +125,7 @@ function renderNewEl() {
   // Creating the Second Submit button
   var submitBtn2 = document.createElement("a");
   submitBtn2.id = "submitBtn2";
+  // submitBtn2.setAttribute("href","results.html")
   submitBtn2.classList = "modal-submit waves-effect waves-green btn-flat";
   submitBtn2.textContent = "SUBMIT";
   modalEl.appendChild(submitBtn2);
@@ -127,11 +139,10 @@ function renderNewEl() {
     for (var i = 0; i < flightContainer.length; i++) {
       var departure = flightContainer[i].children[0].children[0].value;
       var destination = flightContainer[i].children[1].children[0].value;
-      localStorage.setItem("flights", JSON.stringify(flightArray));
       flightArray.push({
         departure_airport: departure,
-        destination_airport: destination,
-      });
+        destination_airport: destination,})
+      localStorage.setItem("flights", JSON.stringify(flightArray));
     }
     getResponse2(flightArray);
   });

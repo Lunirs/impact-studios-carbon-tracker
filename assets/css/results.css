@@ -8,6 +8,10 @@ main {
   flex: 1 0 auto;
 }
 
+#p2 { 
+  font-family: 'Jura', sans-serif;
+}
+
 .nav-extended {
   background-color: rgb(94, 5, 112);
 }

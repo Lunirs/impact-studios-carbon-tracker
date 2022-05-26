@@ -20,6 +20,10 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Black+Han+Sans&display=swap" rel="stylesheet">
 
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Jura&display=swap" rel="stylesheet">
+
     <link rel="stylesheet" href="assets\css\style.css" />
 
     <title>END-POLLUTION!</title>
@@ -35,7 +39,7 @@
       </div>
       <div class="nav-content">
         <ul class="tabs tabs-transparent">
-          <li class="tab" id="about"><a class="active" href="about.html">About</a></li>
+          <li class="tab" id="about"><a class="active" href="index.html">About</a></li>
           <li class="tab"><a href="results.html">Results</a></li>
           <li class="tab"><a href="offsetting.html">Offsetting</a></li>
           <li class="tab"><a href="news.html">News</a></li>
@@ -46,7 +50,7 @@
 
     <div class="row jumbo">
         <h1 id="jumbo1"><center>TIRED OF CONTRIBUTING TO THE POLLUTION OF OUR PLANET?</center></h1>
-        <p>Click below to take our specially created survey to show you how much carbon you emit! </p> 
+        <p id="indexp1">Click below to take our survey to show you how much carbon you emit</p> 
         <div class ='col'>
           <!-- Modal Trigger -->
           <a class="waves-effect surveyBtn btn modal-trigger" href="#modal1">Take the Survey</a>
@@ -110,7 +114,7 @@
           <!-- question structure -->
           <form class="input-field col s12" id="form1">
             <div class="input-field col s12">
-              <input id="flight-num" class="validate" type="text" placeholder="5">
+              <input id="flight-num" class="validate" type="text" placeholder="Ex: 5">
               <label for="textarea1">How Many Flights Have You Taken This Year?</label>
             </div> 
             
@@ -118,6 +122,7 @@
                 <a href="#!" class="modal-close waves-effect waves-green btn-flat">CLOSE</a>
 
                 <a href="" class="modal-submit waves-effect waves-green btn-flat" id="submitBtn">SUBMIT # of FLIGHTS</a>
+                <!-- <a href="results.html" class="modal-submit waves-effect waves-green btn-flat" id="submitBtn2">SUBMIT FLIGHT INFO</a> -->
               </div>
           </form>
           </div>
