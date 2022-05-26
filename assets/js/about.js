@@ -12,10 +12,19 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 // ADDING Content for Carbon Interface API
-
+var carbonEmissionResult = [];
+var flightArray = [];
+var flightDistance = [];
 var appKey = "gGHQT0IwggWO9DJewNToyw";
 
-function getResponse2(legobject){
+function init() {
+  flightArray = JSON.parse(localStorage.getItem("flightArray")) || [];
+  carbonEmissionResult =
+    JSON.parse(localStorage.getItem("carbonEmission")) || [];
+  flightDistance = JSON.parse(localStorage.getItem("flight-distance")) || [];
+}
+
+function getResponse2(legobject) {
   const response2 = fetch("https://www.carboninterface.com/api/v1/estimates", {
     method: "POST",
     mode: "cors",
@@ -35,6 +44,14 @@ function getResponse2(legobject){
     })
     .then(function (data) {
       console.log(data.data.attributes.carbon_mt);
+      console.log(data.data.attributes.distance_value);
+      carbonEmissionResult.push(data.data.attributes.carbon_mt);
+      flightDistance.push(data.data.attributes.distance_value);
+      localStorage.setItem(
+        "carbonEmission",
+        JSON.stringify(carbonEmissionResult)
+      );
+      localStorage.setItem("flight-distance", JSON.stringify(flightDistance));
     });
 }
 $("#submitBtn").on("click", function (event) {
@@ -46,89 +63,84 @@ $("#submitBtn").on("click", function (event) {
   console.log("hope" + num);
 });
 
-$("#submitBtn").on("click", function(event) { 
-  event.preventDefault()
-  var userInput = $("#flight-num").val()
-  localStorage.setItem('flight-num', userInput)
-  var num = localStorage.getItem('flight-num')
+$("#submitBtn").on("click", function (event) {
+  event.preventDefault();
+  var userInput = $("#flight-num").val();
+  localStorage.setItem("flight-num", userInput);
+  var num = localStorage.getItem("flight-num");
   renderNewEl(num);
-})
+});
 
-var modalEl = document.getElementById('form1');
+var modalEl = document.getElementById("form1");
 console.log(modalEl);
 
-function renderNewEl(){  
-  var num = JSON.parse(localStorage.getItem('flight-num'))
+function renderNewEl() {
+  var num = JSON.parse(localStorage.getItem("flight-num"));
 
   for (i = 0; i < num; i++) {
-  // container for both the departure and destination
-    var con = document.createElement('div');
-    con.classList = "input-field col s12"
+    // container for both the departure and destination
+    var con = document.createElement("div");
+    con.classList = "input-field col s12";
     modalEl.appendChild(con);
-    
-    var con2 = document.createElement('div');
-    con2.classList = "row flight"
+
+    var con2 = document.createElement("div");
+    con2.classList = "row flight";
     con.appendChild(con2);
-    
-    var con3 = document.createElement('div');
-    con3.classList = "col"
+
+    var con3 = document.createElement("div");
+    con3.classList = "col";
     con2.appendChild(con3);
 
-    var departureEl = document.createElement('input')
-    departureEl.classList = "validate depart"
-    departureEl.type = "text"
-    departureEl.placeholder = "SFO"
-    con3.appendChild(departureEl)
+    var departureEl = document.createElement("input");
+    departureEl.classList = "validate depart";
+    departureEl.type = "text";
+    departureEl.placeholder = "SFO";
+    con3.appendChild(departureEl);
 
-    var label = document.createElement('label')
-    label.innerHTML = "Departing Airport"
-    con3.appendChild(label)
+    var label = document.createElement("label");
+    label.innerHTML = "Departing Airport";
+    con3.appendChild(label);
 
-// content for Destination within For Loop
+    // content for Destination within For Loop
 
-    var dcon3 = document.createElement('div');
-    dcon3.classList = "col"
+    var dcon3 = document.createElement("div");
+    dcon3.classList = "col";
     con2.appendChild(dcon3);
 
-    var destinationEl = document.createElement('input')
-    destinationEl.classList = " col validate destinate"
-    destinationEl.type = "text"
-    destinationEl.placeholder = "JFK"
-    dcon3.appendChild(destinationEl)
+    var destinationEl = document.createElement("input");
+    destinationEl.classList = " col validate destinate";
+    destinationEl.type = "text";
+    destinationEl.placeholder = "JFK";
+    dcon3.appendChild(destinationEl);
 
-    var label2 = document.createElement('label')
-    label2.innerHTML = "Destination Airport"
-    dcon3.appendChild(label2)
+    var label2 = document.createElement("label");
+    label2.innerHTML = "Destination Airport";
+    dcon3.appendChild(label2);
   }
-// Creating the Second Submit button
-    var submitBtn2 = document.createElement('a')
-    submitBtn2.id = "submitBtn2"
-    submitBtn2.classList = "modal-submit waves-effect waves-green btn-flat"
-    submitBtn2.textContent = "SUBMIT"
-    modalEl.appendChild(submitBtn2)
+  // Creating the Second Submit button
+  var submitBtn2 = document.createElement("a");
+  submitBtn2.id = "submitBtn2";
+  submitBtn2.classList = "modal-submit waves-effect waves-green btn-flat";
+  submitBtn2.textContent = "SUBMIT";
+  modalEl.appendChild(submitBtn2);
 
-// Have empty array
-// flight num = 0 
+  // Have empty array
+  // flight num = 0
 
-
-$("#submitBtn2").on("click", function (event2) {
-  // console.log(document.querySelectorAll(".flight"))
-  var flightContainer = document.querySelectorAll(".flight")
-  var flightArray = [ ]
-  for (var i =0; i < flightContainer.length; i++){
-    var departure = flightContainer[i].children[0].children[0].value
-    var destination = flightContainer[i].children[1].children[0].value
-    flightArray.push({departure_airport: departure, destination_airport: destination})
-  }
-  localStorage.setItem("flights", JSON.stringify(flightArray))
-  getResponse2(flightArray)
-});
-  
+  $("#submitBtn2").on("click", function (event2) {
+    // console.log(document.querySelectorAll(".flight"))
+    var flightContainer = document.querySelectorAll(".flight");
+    for (var i = 0; i < flightContainer.length; i++) {
+      var departure = flightContainer[i].children[0].children[0].value;
+      var destination = flightContainer[i].children[1].children[0].value;
+      flightArray.push({
+        departure_airport: departure,
+        destination_airport: destination,
+      });
+    }
+    localStorage.setItem("flights", JSON.stringify(flightArray));
+    getResponse2(flightArray);
+  });
 }
 
-
-
-
-
-
-
+init();
