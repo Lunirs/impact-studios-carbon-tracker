@@ -1,4 +1,3 @@
-
 // modal initialization
 document.addEventListener("DOMContentLoaded", function () {
   var elems = document.querySelectorAll(".modal");
@@ -16,10 +15,11 @@ document.addEventListener("DOMContentLoaded", function () {
 var carbonEmissionResult = [];
 var flightArray = [];
 var flightDistance = [];
+var flightNum = [];
 var appKey = "dKabCmH1zS7T44G5drLzQ";
 
 function init() {
-  flightArray = JSON.parse(localStorage.getItem("flightsArray")) || [];
+  flightArray = JSON.parse(localStorage.getItem("flights")) || [];
   carbonEmissionResult =
     JSON.parse(localStorage.getItem("carbonEmission")) || [];
   flightDistance = JSON.parse(localStorage.getItem("flight-distance")) || [];
@@ -55,20 +55,13 @@ function getResponse2(legobject) {
       localStorage.setItem("flight-distance", JSON.stringify(flightDistance));
     });
 }
-$("#submitBtn").on("click", function (event) {
-  event.preventDefault();
-  var userInput = $("#flight-num").val();
-  localStorage.setItem("flight-num", userInput);
-  console.log(userInput);
-  var num = localStorage.getItem("flight-num");
-  console.log("hope" + num);
-});
 
 $("#submitBtn").on("click", function (event) {
   event.preventDefault();
   var userInput = $("#flight-num").val();
   localStorage.setItem("flight-num", userInput);
-  var num = localStorage.getItem("flight-num");
+  var num = localStorage.getItem("flight-num") || [];
+  flightNum.push(num);
   renderNewEl(num);
 });
 
@@ -76,7 +69,7 @@ var modalEl = document.getElementById("form1");
 console.log(modalEl);
 
 function renderNewEl() {
-  var num = JSON.parse(localStorage.getItem("flight-num"));
+  var num = JSON.parse(localStorage.getItem("flight-num")) || [];
 
   for (i = 0; i < num; i++) {
     // container for both the departure and destination
