@@ -45,3 +45,8 @@ img {
 .card {
   max-width: 1000px;
 }
+
+.page-footer {
+  margin-top: 100px;
+  background-color: rgb(94, 5, 112);
+}
