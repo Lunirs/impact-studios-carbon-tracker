@@ -81,11 +81,10 @@ function renderNewEl() {
   var num = JSON.parse(localStorage.getItem("flight-num"));
   // num = JSON.stringify(num)
 
-  for (i = 0; i<num.length; i++){
-    num2 = parseInt(num[i])
-    console.log("num2: ",num2)
-    console.log("type: ",typeof(num2))
-
+  for (i = 0; i < num.length; i++) {
+    num2 = parseInt(num[i]);
+    console.log("num2: ", num2);
+    console.log("type: ", typeof num2);
   }
 
   // console.log("this is the type of num: ",typeof(num2))
