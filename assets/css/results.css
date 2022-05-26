@@ -8,8 +8,8 @@ main {
   flex: 1 0 auto;
 }
 
-#p2 { 
-  font-family: 'Jura', sans-serif;
+#p2 {
+  font-family: "Jura", sans-serif;
 }
 
 .nav-extended {
@@ -20,7 +20,6 @@ main {
   background: lightblue;
   height: 300px;
   margin-top: -40px;
-  
 }
 
 .surveyBtn {
@@ -56,4 +55,9 @@ main {
   display: flex;
   justify-content: space-between;
   align-items: center;
+}
+
+.page-footer {
+  margin-top: 100px;
+  background-color: rgb(94, 5, 112);
 }
