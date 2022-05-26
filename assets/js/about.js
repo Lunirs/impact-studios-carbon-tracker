@@ -1,3 +1,4 @@
+
 // modal initialization
 document.addEventListener("DOMContentLoaded", function () {
   var elems = document.querySelectorAll(".modal");
