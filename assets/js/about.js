@@ -15,9 +15,16 @@ document.addEventListener("DOMContentLoaded", function () {
 var carbonEmissionResult = [];
 var flightArray = [];
 var flightDistance = [];
-var flightNum = [];
+var flightNum;
+if (!JSON.parse(localStorage.getItem("flight-num"))) {
+  flightNum = [];
+} else {
+  flightNum = JSON.parse(localStorage.getItem("flight-num"));
+}
+console.log(flightNum);
 var appKey = "dKabCmH1zS7T44G5drLzQ";
 
+// initialization function
 function init() {
   flightArray = JSON.parse(localStorage.getItem("flightsArray")) || [];
   carbonEmissionResult =
@@ -56,14 +63,13 @@ function getResponse2(legobject) {
     });
 }
 
+// This is the event listener for the # of flights button
 $("#submitBtn").on("click", function (event) {
   event.preventDefault();
   var num = $("#flight-num").val();
-  // localStorage.setItem("flight-num", userInput);
-  // var num = localStorage.getItem("flight-num");
   flightNum.push(num);
+  console.log("This should be the flight num array", flightNum);
   localStorage.setItem("flight-num", JSON.stringify(flightNum));
-  console.log(flightNum);
   renderNewEl(num);
 });
 
@@ -72,7 +78,7 @@ console.log(modalEl);
 
 function renderNewEl() {
   var num = JSON.parse(localStorage.getItem("flight-num"));
-
+  console.log("render new el running");
   for (i = 0; i < num; i++) {
     // container for both the departure and destination
     var con = document.createElement("div");
