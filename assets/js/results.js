@@ -31,3 +31,8 @@ var renderResults = () => {
 };
 
 renderResults();
+
+$("#offset-Btn").on("click", (event) => {
+  event.preventDefault();
+  location.replace("offsetting.html");
+});

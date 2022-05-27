@@ -67,8 +67,8 @@ function getResponse2(legobject) {
 $("#submitBtn").on("click", function (event) {
   event.preventDefault();
   var num = $("#flight-num").val();
-  flightNum.push(num)
-  localStorage.setItem("flight-num",JSON.stringify(flightNum))
+  flightNum.push(num);
+  localStorage.setItem("flight-num", JSON.stringify(flightNum));
   renderNewEl(num);
 });
 
@@ -77,8 +77,8 @@ console.log(modalEl);
 
 function renderNewEl() {
   var num = JSON.parse(localStorage.getItem("flight-num"));
-  for (i = 0; i<num.length; i++){
-    num2 = parseInt(num[i])
+  for (i = 0; i < num.length; i++) {
+    num2 = parseInt(num[i]);
   }
 
   for (i = 0; i < num2; i++) {
@@ -124,10 +124,16 @@ function renderNewEl() {
   // Creating the Second Submit button
   var submitBtn2 = document.createElement("a");
   submitBtn2.id = "submitBtn2";
-  submitBtn2.setAttribute("href","results.html")
   submitBtn2.classList = "modal-submit waves-effect waves-green btn-flat";
   submitBtn2.textContent = "SUBMIT";
   modalEl.appendChild(submitBtn2);
+
+  var resultsBtn = document.createElement("a");
+  resultsBtn.id = "resultsBtn";
+  resultsBtn.classList = "modal-submit waves-effect waves-green btn-flat";
+  resultsBtn.textContent = "See your resutls!";
+  resultsBtn.setAttribute("href", "results.html");
+  modalEl.appendChild(resultsBtn);
 
   // Have empty array
   // flight num = 0
