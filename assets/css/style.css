@@ -4,15 +4,12 @@ body {
   flex-direction: column;
 }
 
-
-#jumbo1 { 
-  font-family: 'Black Han Sans', sans-serif;
-
-
+#jumbo1 {
+  font-family: "Black Han Sans", sans-serif;
 }
 
-#indexp1 { 
-  font-family: 'Jura', sans-serif;
+#indexp1 {
+  font-family: "Jura", sans-serif;
 }
 
 main {
@@ -76,4 +73,9 @@ main {
   display: flex;
   justify-content: space-between;
   align-items: center;
+}
+
+.page-footer {
+  margin-top: 100px;
+  background-color: rgb(94, 5, 112);
 }

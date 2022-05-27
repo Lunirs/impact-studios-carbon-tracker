@@ -8,6 +8,10 @@ main {
   flex: 1 0 auto;
 }
 
+#title {
+  font-family: "Blaka", cursive;
+}
+
 #card-container {
   display: flex;
   flex-direction: column;
@@ -40,4 +44,9 @@ img {
 
 .card {
   max-width: 1000px;
+}
+
+.page-footer {
+  margin-top: 100px;
+  background-color: rgb(94, 5, 112);
 }

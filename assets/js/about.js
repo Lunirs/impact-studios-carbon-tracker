@@ -1,4 +1,3 @@
-
 // modal initialization
 document.addEventListener("DOMContentLoaded", function () {
   var elems = document.querySelectorAll(".modal");
@@ -18,11 +17,11 @@ var flightArray = [];
 var flightDistance = [];
 var flightNum;
 if (!JSON.parse(localStorage.getItem("flight-num"))) {
-   flightNum = []
+  flightNum = [];
 } else {
-  flightNum = JSON.parse(localStorage.getItem("flight-num"))
-};
-console.log(flightNum)
+  flightNum = JSON.parse(localStorage.getItem("flight-num"));
+}
+console.log(flightNum);
 var appKey = "PIyW58u2ebQ7k0qbWwqJw";
 
 // initialization function
@@ -141,7 +140,8 @@ function renderNewEl() {
       var destination = flightContainer[i].children[1].children[0].value;
       flightArray.push({
         departure_airport: departure,
-        destination_airport: destination,})
+        destination_airport: destination,
+      });
       localStorage.setItem("flights", JSON.stringify(flightArray));
     }
     getResponse2(flightArray);
