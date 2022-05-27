@@ -67,10 +67,8 @@ function getResponse2(legobject) {
 $("#submitBtn").on("click", function (event) {
   event.preventDefault();
   var num = $("#flight-num").val();
-  flightNum.push(num);
-  console.log("This should be the flight num array", flightNum);
-  console.log("This should be the num", num, "type of num", typeof num);
-  localStorage.setItem("flight-num", JSON.stringify(flightNum));
+  flightNum.push(num)
+  localStorage.setItem("flight-num",JSON.stringify(flightNum))
   renderNewEl(num);
 });
 
@@ -79,16 +77,9 @@ console.log(modalEl);
 
 function renderNewEl() {
   var num = JSON.parse(localStorage.getItem("flight-num"));
-  // num = JSON.stringify(num)
-
-  for (i = 0; i < num.length; i++) {
-    num2 = parseInt(num[i]);
-    console.log("num2: ", num2);
-    console.log("type: ", typeof num2);
+  for (i = 0; i<num.length; i++){
+    num2 = parseInt(num[i])
   }
-
-  // console.log("this is the type of num: ",typeof(num2))
-  // console.log("render new el running")
 
   for (i = 0; i < num2; i++) {
     // container for both the departure and destination
@@ -133,7 +124,7 @@ function renderNewEl() {
   // Creating the Second Submit button
   var submitBtn2 = document.createElement("a");
   submitBtn2.id = "submitBtn2";
-  // submitBtn2.setAttribute("href","results.html")
+  submitBtn2.setAttribute("href","results.html")
   submitBtn2.classList = "modal-submit waves-effect waves-green btn-flat";
   submitBtn2.textContent = "SUBMIT";
   modalEl.appendChild(submitBtn2);
